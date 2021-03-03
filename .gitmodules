@@ -1,0 +1,36 @@
+[submodule "beebs"]
+	path = beebs
+	url = https://github.com/black-parrot-sdk/beebs
+[submodule "bootrom"]
+	path = bootrom
+	url = https://github.com/black-parrot-sdk/bootrom
+[submodule "bp_tests"]
+	path = bp_tests
+	url = https://github.com/black-parrot-sdk/bp_tests
+[submodule "coremark"]
+	path = coremark
+	url = https://github.com/black-parrot-sdk/coremark
+[submodule "bp_linux"]
+	path = bp_linux
+	url = https://github.com/black-parrot-sdk/bp_linux
+[submodule "opensbi"]
+	path = opensbi
+	url = https://github.com/black-parrot-sdk/opensbi
+[submodule "perch"]
+	path = perch
+	url = https://github.com/black-parrot-sdk/perch
+[submodule "riscv-dv"]
+	path = riscv-dv
+	url = https://github.com/black-parrot-sdk/riscv-dv
+[submodule "riscv-tests"]
+	path = riscv-tests
+	url = https://github.com/black-parrot-sdk/riscv-tests
+[submodule "spec2000"]
+	path = spec2000
+	url = https://github.com/black-parrot-sdk/spec2000
+[submodule "demos"]
+	path = demos
+	url = https://github.com/black-parrot-sdk/demos
+[submodule "riscv-gnu-toolchain"]
+	path = riscv-gnu-toolchain
+	url = https://github.com/black-parrot-sdk/riscv-gnu-toolchain
