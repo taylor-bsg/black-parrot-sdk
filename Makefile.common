@@ -1,0 +1,13 @@
+## Set common environment variables
+TOP ?= $(shell git rev-parse --show-toplevel)
+
+## Override tool paths if needed
+export GCC       ?= gcc
+export PYTHON    ?= python
+
+## Directories to install into
+BP_BIN_DIR     := $(TOP)/bin
+BP_LIB_DIR     := $(TOP)/lib
+BP_INCLUDE_DIR := $(TOP)/include
+BP_TOUCH_DIR   := $(TOP)/touchfiles
+

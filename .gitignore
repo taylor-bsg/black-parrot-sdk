@@ -1,0 +1,8 @@
+touchfiles/
+include/
+bin/
+lib/
+share/
+lib64/
+libexec/
+sysroot/

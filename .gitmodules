@@ -1,36 +1,65 @@
 [submodule "beebs"]
 	path = beebs
-	url = https://github.com/black-parrot-sdk/beebs
+    url = https://github.com/black-parrot-sdk/beebs
+    branch = blackparrot_mods
+    ignore = dirty
 [submodule "bootrom"]
 	path = bootrom
-	url = https://github.com/black-parrot-sdk/bootrom
+    url = https://github.com/black-parrot-sdk/bootrom
+    branch = master
+    ignore = dirty
 [submodule "bp_tests"]
 	path = bp_tests
 	url = https://github.com/black-parrot-sdk/bp_tests
+    branch = master
+    ignore = dirty
 [submodule "coremark"]
 	path = coremark
 	url = https://github.com/black-parrot-sdk/coremark
+    branch = blackparrot_mods
+    ignore = dirty
 [submodule "bp_linux"]
 	path = bp_linux
 	url = https://github.com/black-parrot-sdk/bp_linux
+    branch = master
+    ignore = dirty
 [submodule "opensbi"]
 	path = opensbi
 	url = https://github.com/black-parrot-sdk/opensbi
+    branch = blackparrot_mods
+    ignore = dirty
 [submodule "perch"]
 	path = perch
 	url = https://github.com/black-parrot-sdk/perch
+    branch = master
+    ignore = dirty
 [submodule "riscv-dv"]
 	path = riscv-dv
 	url = https://github.com/black-parrot-sdk/riscv-dv
+    branch = blackparrot_mods
+    ignore = dirty
 [submodule "riscv-tests"]
 	path = riscv-tests
 	url = https://github.com/black-parrot-sdk/riscv-tests
+    branch = blackparrot_mods
+    ignore = dirty
 [submodule "spec2000"]
 	path = spec2000
 	url = https://github.com/black-parrot-sdk/spec2000
+    branch = master
+    ignore = dirty
 [submodule "demos"]
 	path = demos
 	url = https://github.com/black-parrot-sdk/demos
+    branch = master
+    ignore = dirty
 [submodule "riscv-gnu-toolchain"]
 	path = riscv-gnu-toolchain
 	url = https://github.com/black-parrot-sdk/riscv-gnu-toolchain
+    branch = blackparrot_mods
+    ignore = dirty
+[submodule "dromajo"]
+	path = dromajo
+	url = https://github.com/bsg-external/dromajo
+    branch = blackparrot_mods
+    ignore = dirty

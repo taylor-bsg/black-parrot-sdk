@@ -1,0 +1,40 @@
+TOP ?= $(shell git rev-parse --show-toplevel)
+
+gnu_dir      :=$(TOP)/riscv-gnu-toolchain
+dromajo_dir  :=$(TOP)/dromajo
+
+define submodule_tool_template
+$(1)_tag := $(addprefix $(1)., $(shell cd $(2); git rev-parse HEAD))
+$(BP_TOUCH_DIR)/$$($(1)_tag):
+	rm -rf $(BP_TOUCH_DIR)/$(1).*
+	cd $(TOP); git submodule update --init --recursive $$($(1)_dir)
+	+$(MAKE) $(1)_build
+	touch $(BP_TOUCH_DIR)/$$($(1)_tag)
+$(1): $(BP_TOUCH_DIR)/$$($(1)_tag)
+$(1)_manual:
+	+$(MAKE) $(1)_build
+endef
+
+gnu_build:
+	cd $(gnu_dir); \
+		./configure --prefix=$(TOP) --with-arch=rv64imafd --with-abi=lp64 --with-cmodel=medany 
+	$(MAKE) -C $(gnu_dir)
+	$(MAKE) -C $(gnu_dir) linux
+	$(MAKE) -C $(gnu_dir) install
+	cp $(TOP)/riscv64-unknown-elf-dramfs/bin/dramfs_mklfs $(BP_BIN_DIR)
+
+dromajo_build:
+	mkdir -p $(dromajo_dir)/build
+	cmake -S $(dromajo_dir) -B $(dromajo_dir)/build
+	$(MAKE) -C $(dromajo_dir)/build
+	cp $(dromajo_dir)/build/dromajo $(BP_BIN_DIR)
+	cp $(dromajo_dir)/build/libdromajo_cosim.a $(BP_LIB_DIR)
+	cp $(dromajo_dir)/include/dromajo_cosim.h $(BP_INCLUDE_DIR)
+
+$(eval $(call submodule_tool_template,gnu,$(gnu_dir)))
+$(eval $(call submodule_tool_template,dromajo,$(dromajo_dir)))
+
+tidy_sdk:
+	cd $(TOP); git submodule deinit -f $(gnu_dir)
+	cd $(TOP); git submodule deinit -f $(dromajo_dir)
+
